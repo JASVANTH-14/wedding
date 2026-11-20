@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Arjun & Anu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <!-- All content overlays -->
+  <div class="overlay-container" aria-hidden="true">
+
+    <!-- 1. Title: ARJUN & ANU (frames 001-017) -->
+    <div id="title-1" class="overlay-section title-hero">ARJUN &amp; ANU</div>
+
+    <!-- 2. Title: WE'RE GETTING MARRIED (frames 019-022) -->
+    <div id="title-2" class="overlay-section title-sub">WE'RE GETTING MARRIED</div>
+
+    <!-- 3. SAVE THE DATE (frames 024-026) -->
+    <div id="save-date-1" class="overlay-section">
+      <div class="title-sub">SAVE THE DATE</div>
+      <div class="title-date">14 / 01 / 27</div>
+    </div>
+
+    <!-- 4. Countdown (frames 028-030) -->
+    <div id="countdown" class="overlay-section">
+      <div class="countdown-wrap">
+        <div class="cd-unit"><span id="cd-days">000</span><span class="cd-label">Days</span></div>
+        <div class="cd-unit"><span id="cd-hours">00</span><span class="cd-label">Hours</span></div>
+        <div class="cd-unit"><span id="cd-minutes">00</span><span class="cd-label">Minutes</span></div>
+        <div class="cd-unit"><span id="cd-seconds">00</span><span class="cd-label">Seconds</span></div>
+      </div>
+    </div>
+
+    <!-- 5. Save the Date Button (frames 033-037) -->
+    <div id="save-btn-section" class="overlay-section">
+      <div class="title-sub" style="margin-bottom: 1.8rem;">SAVE THE DATE</div>
+      <a id="save-cal-btn" class="cta-btn" href="#" target="_blank" rel="noopener noreferrer">ADD TO CALENDAR</a>
+    </div>
+
+    <!-- 6. Love Story (frames 040-102) -->
+    <div id="love-story" class="overlay-section story-container">
+      <div class="story-title">OUR LOVE STORY</div>
+      <div class="story-paragraphs">
+        <p class="story-p" data-index="0">Some love stories begin with fireworks. Theirs began with a quiet glance across a crowded room — the kind of moment you almost miss, but never forget.</p>
+        <p class="story-p" data-index="1">He noticed the way she laughed, unguarded and warm. She noticed the way he listened — truly listened — as though every word she spoke mattered.</p>
+        <p class="story-p" data-index="2">What started as stolen conversations turned into long evening walks, where the world faded and only their words remained.</p>
+        <p class="story-p" data-index="3">They discovered they shared the same silences — the comfortable kind, where being together was enough.</p>
+        <p class="story-p" data-index="4">Through seasons of change they held on, learning that love isn't just a feeling but a choice you make every single day.</p>
+        <p class="story-p" data-index="5">He learned her strength. She discovered his tenderness. Together, they became more than they ever were apart.</p>
+        <p class="story-p" data-index="6">And then one ordinary evening, under a sky painted in gold, he asked her a question that changed everything.</p>
+        <p class="story-p" data-index="7">She said yes — not because it was perfect, but because with him, even the imperfect moments felt like home.</p>
+        <p class="story-p" data-index="8">Now they stand at the beginning of forever, ready to write every chapter together — with love, with laughter, and with faith.</p>
+      </div>
+    </div>
+
+    <!-- 7. Bride Details (frames 108-109) -->
+    <div id="bride" class="overlay-section person-card">
+      <div class="person-name">ANU</div>
+      <div class="person-detail">Daughter of Suresh &amp; Ankita</div>
+      <div class="person-detail">B.Sc, M.Sc, M.Phil...</div>
+      <div class="person-detail">Coimbatore</div>
+    </div>
+
+    <!-- 8. Groom Details (frames 110-112) -->
+    <div id="groom" class="overlay-section person-card">
+      <div class="person-name">ARJUN</div>
+      <div class="person-detail">Son of Joseph &amp; Miriam</div>
+      <div class="person-detail">BCA, MBA...</div>
+      <div class="person-detail">Coimbatore</div>
+    </div>
+
+    <!-- 9. Holy Matrimony (frames 188-194) -->
+    <div id="holy-matrimony" class="overlay-section venue-section">
+      <div class="venue-bg-blur"></div>
+      <div class="venue-content">
+        <img class="venue-photo" src="assets/chruch.jpg" alt="St. Antony's Church">
+        <div class="venue-info">
+          <div class="venue-title">HOLY MATRIMONY</div>
+          <div class="venue-detail">14 / 01 / 27</div>
+          <div class="venue-detail">10:30 AM</div>
+          <div class="venue-detail">St. Antony's Church, Coonoor</div>
+          <a class="cta-btn" href="https://www.google.com/maps/search/St.+Antony%27s+Church,+Coonoor,+Tamil+Nadu,+India" target="_blank" rel="noopener noreferrer">VIEW LOCATION</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Reception (frames 195-207) -->
+    <div id="reception" class="overlay-section venue-section">
+      <div class="venue-bg-blur"></div>
+      <div class="venue-content">
+        <img class="venue-photo" src="assets/chruch.jpg" alt="Venue">
+        <div class="venue-info">
+          <div class="venue-title">RECEPTION</div>
+          <div class="venue-detail">14 / 01 / 27</div>
+          <div class="venue-detail">4:30 PM</div>
+          <div class="venue-detail">Coonoor</div>
+          <a class="cta-btn" href="https://maps.app.goo.gl/QCLonmFDFoaNGihx6" target="_blank" rel="noopener noreferrer">VIEW LOCATION</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. Welcome Quote (frames 208-211) -->
+    <div id="welcome-quote" class="overlay-section">
+      <div class="quote-text">Two hearts, one journey.<br>Surrounded by the people we love most,<br>we begin our forever.</div>
+    </div>
+
+    <!-- 12. Final Save The Date (frames 212-214) -->
+    <div id="final-std" class="overlay-section">
+      <div class="title-sub">SAVE THE DATE</div>
+      <div class="title-date">14 / 01 / 27</div>
+      <a id="final-cal-btn" class="cta-btn" href="#" target="_blank" rel="noopener noreferrer" style="margin-top: 1.8rem;">ADD TO CALENDAR</a>
+    </div>
+
+  </div>
+
+  <!-- Music toggle -->
+  <button id="music-toggle" class="music-btn" aria-label="Toggle music">
+    <svg id="music-icon-on" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18V5l12-2v13"/>
+      <circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+    </svg>
+    <svg id="music-icon-off" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+      <path d="M9 18V5l12-2v13"/>
+      <circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+      <line x1="1" y1="1" x2="23" y2="23" stroke="#fff" stroke-width="2.5"/>
+    </svg>
+  </button>
+
+  <audio id="bg-music" src="assets/wedding-song.mp3" loop preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

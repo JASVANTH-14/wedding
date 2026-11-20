@@ -1,0 +1,329 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow-x: hidden;
+  scrollbar-color: #333 #000;
+  scrollbar-width: thin;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow-x: hidden;
+  height: 600vh;
+  min-height: 5000px;
+  -webkit-overflow-scrolling: touch;
+}
+
+html::-webkit-scrollbar { width: 6px; }
+html::-webkit-scrollbar-track { background: #000; }
+html::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+html::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* ── Canvas ── */
+#canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  display: block;
+  z-index: 1;
+  pointer-events: none;
+  background-color: #000;
+}
+
+/* ── Overlay Container ── */
+.overlay-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ── Shared Overlay Section ── */
+.overlay-section {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFFFFF;
+  text-align: center;
+  font-family: 'Cinzel', 'Playfair Display', 'Georgia', serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 0 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  user-select: none;
+  width: 90%;
+  max-width: 1100px;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.75), 0 2px 8px rgba(0,0,0,0.6);
+  will-change: opacity;
+}
+
+/* ── Title Sizes ── */
+.title-hero {
+  font-size: clamp(2.4rem, 6.5vw, 5.2rem);
+  letter-spacing: 0.16em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.title-sub {
+  font-size: clamp(1.2rem, 3.6vw, 2.8rem);
+  letter-spacing: 0.22em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.title-date {
+  font-size: clamp(1.6rem, 4.5vw, 3.6rem);
+  letter-spacing: 0.18em;
+  margin-top: 0.6rem;
+  font-weight: 600;
+}
+
+/* ── Countdown ── */
+.countdown-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 4vw, 3rem);
+  flex-wrap: wrap;
+}
+
+.cd-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.cd-unit span:first-child {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 5.5vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+}
+
+.cd-label {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.55rem, 1.4vw, 0.85rem);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-top: 0.35rem;
+  opacity: 0.75;
+}
+
+/* ── CTA Button ── */
+.cta-btn {
+  display: inline-block;
+  pointer-events: auto;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: clamp(0.65rem, 1.6vw, 0.95rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.65);
+  padding: 0.85em 2.4em;
+  margin-top: 1.2rem;
+  border-radius: 2px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  text-shadow: none;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: #fff;
+}
+
+/* ── Love Story ── */
+.story-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 800px;
+}
+
+.story-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.3rem, 3.6vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+}
+
+.story-paragraphs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.story-p {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.82rem, 2vw, 1.08rem);
+  font-weight: 500;
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+  text-align: center;
+  opacity: 0;
+  max-width: 650px;
+  margin-bottom: 1.2rem;
+  transition: none;
+}
+
+/* ── Person Cards ── */
+.person-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.person-name {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.person-detail {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.75rem, 2vw, 1.05rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* ── Venue Sections ── */
+.venue-section {
+  width: 94%;
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.venue-bg-blur {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  background-image: url('assets/chruch.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(28px) brightness(0.35);
+  border-radius: 18px;
+  opacity: 0;
+  z-index: 0;
+  transition: none;
+}
+
+.venue-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 2rem 1.5rem;
+}
+
+.venue-photo {
+  width: clamp(180px, 42vw, 340px);
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  object-fit: cover;
+}
+
+.venue-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.venue-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.3rem, 3.6vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.venue-detail {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.75rem, 2vw, 1.05rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* ── Quote ── */
+.quote-text {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1rem, 2.8vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 2;
+  font-style: italic;
+}
+
+/* ── Music Toggle ── */
+.music-btn {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  z-index: 100;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  padding: 0;
+  outline: none;
+}
+
+.music-btn:hover {
+  border-color: rgba(255,255,255,0.7);
+  background: rgba(0,0,0,0.6);
+}
